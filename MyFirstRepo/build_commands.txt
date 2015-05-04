@@ -1,0 +1,13 @@
+can v undo a newly added item?
+
+add a project--> undo from tool bar says not allowed --> from pending chnages uncheck .sln and .csproj still it allows
+
+hco -b cscr606 -en "CA SCM r12.7" -p "8969 - r12.7 - Externalization of rebranding" -st Development -vp /RINCON/Code -cp /devel/cascm/linux/EFIX_BUILD/r12.6/putsa03/code -br -usr putsa03 -pw Omsairam7& -r -tb -op pc 
+
+
+ /opt/CA/r12SP3/scm/bin/hsync -b cscr606 -en "CA SCM r12.7" -st Development -vp /RINCON/Code -cp /devel/cascm/linux/EFIX_BUILD/r12.6/putsa03/code -usr putsa03 -pw Omsairam7& -br -tb -pl "8969 - r12.7 - Externalization of rebranding" -o /devel/cascm/linux/AutomationBuild/bldauto/log/rincon.log
+
+$RINCONREF/code/include/tconst.h
+
+$RINCONREF/code/include/verinfo.h
+"RELEASE_VERSION=$RELEASE_VERSION;RELEASE=$RELEASE;RELEASE_VER=$RELEASE_VER;Copyright=$Copyright"

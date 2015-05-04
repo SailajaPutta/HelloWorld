@@ -1,0 +1,147 @@
+//bin
+//ha
+
+
+steps to install :
+1)open cmd prmpt
+telnet lodiibmsdm2
+login with username/pwd as harvest/harvest
+
+go to /home/harvest/Build27
+
+completeinstall.tar
+etpki---- etpki_aix.tar  --->setup
+pec--pec474.tar --install.sh
+agent
+lic98--lic98.tar-->lic98_install--->./install.sh
+scm
+client
+odbc--odbc311.tar -->odbc311_110106--> ./INSTALL.SH
+
+
+scm
+AgileVisionClient.jar  hagentauth.dfo         jre
+Database               haragent.jar           lib
+Forms                  harsetup.sh            log
+HAgent.arg             hcomm.jar              log4j-1.2.12.jar
+HBroker.arg            hcontainer.jar         scm.tar
+HServer.arg            hdberr.msg             set_all
+SCMAgileVision.jar     hdbres.msg             uninstall
+Templates              henglish.msg           version.txt
+bin                    hserverauth.dfo        wsc-20.jar
+cmsdk.jar              hutils.jar
+hSDKenglish.msg        install
+
+
+
+
+bash-4.3$ cd client
+bash-4.3$ ls
+HSDK             caident.xsl      harsetup.sh      lib
+JHSDK            client.tar       henglish.msg     log
+bin              hSDKenglish.msg  install          version.txt
+bash-4.3$
+
+
+
+bash-4.3$ cd agent
+bash-4.3$ ls
+HAgent.arg     bin            install        log
+agentonly.tar  henglish.msg   lib            version.txt
+bash-4.3$
+
+
+
+bash-4.3$ ls
+ETPKI                completeinstall.tar  pec
+agent                lic98                scm
+client               odbc
+bash-4.3$
+
+
+if particulkar file doesnt hav permision g to root user
+
+to go to root user :su
+password :rootROOT
+to exit from there, "exit" is the cmd
+
+
+
+1)theres a completeinstall.tar file
+unzip it
+tar -xvf completeinstall.tar
+
+cd pec
+then export RT_HOME=$PWD 
+then ./INSTALL.SH
+And select 1 option
+and say "no"
+
+now go to bin folder and ./rinit.sh
+now go back to pec
+ls pec
+go to standard folder
+and check version.txt
+4.7.4
+
+
+2)now to install etpki
+go to cd etpki
+tar xvf etpki_aix.tar
+then  goto dat folder
+
+u need to become the root user to execute this
+
+"su"
+rootROOT
+then # ./setup install caller="CA" instdir=/opt/CA/SC verbose env=all
+
+
+then give export CAPKIHOME=/opt/CA/SC/CAPKI this command
+now etpki is succesful
+
+
+3)go to licence sile-->unzip it
+and run ./install.sh  (root user only can do)
+
+and go to /opt/CA/SC/ca_lic) and ./lic98version and check d version
+01.90.03.00
+
+4)gunzip odbc311.tar.gz
+tar xvf odbc311.tar
+tar xvf unixinstallscripts.tar
+
+export ODBC_HOME=$PWD
+
+ORACLE_SID=<SID>
+ORACLE_HOME=<ORACLE_HOME>
+
+./INSTALL.SH
+./odbcenv.sh
+
+
+5)agent:
+unzip
+go to install folder
+before install folder set CA_SCM_HOME
+
+./setup.sh
+
+press q
+press yes
+
+6)same wit client
+
+
+
+
+ORACLE_SID=orcl11g orcl12a
+ORACLE_HOME=/u01/app/oracle/oracle/product/10.2.0/Db_1
+/u01/app/oracle/oracle/product/10.2.0/Db_1/network
+
+
+
+
+at d end
+cp bkrd -set_all
+and run ./set_all
